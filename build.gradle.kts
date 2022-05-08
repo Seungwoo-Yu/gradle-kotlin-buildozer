@@ -15,12 +15,6 @@ allprojects {
   }
 }
 
-java {
-  toolchain {
-    languageVersion.set(JavaLanguageVersion.of(16))
-  }
-}
-
 dependencies {
   implementation(kotlin("stdlib"))
   implementation(kotlin("stdlib-jdk8"))
