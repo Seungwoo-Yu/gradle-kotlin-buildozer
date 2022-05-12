@@ -10,10 +10,25 @@ This plugin is basically a fork of https://github.com/gradle-dependency-analyze/
 Thanks to https://gist.github.com/wfhartford and https://github.com/kellyrob99 for the inspiration!
 
 # Installation
-The plugin is available from the gradle plugin repository. See the instructions here for how to include it in your project.
-https://plugins.gradle.org/plugin/com.faire.gradle.analyze
+Add the lines below in your build.gradle.kts
 
-Applying this project adds the task `analyzeDependencies` to your projects. 
+```kotlin
+buildscript {
+    repositories {
+        maven { url = uri("https://jitpack.io") }
+    }
+
+    dependencies {
+        classpath("com.github.seungwoo-yu:gradle-kotlin-buildozer:1.0.0") { // release version
+            version {
+                branch = "release"
+            }
+        }
+    }
+}
+
+apply(plugin = "com.faire.gradle.analyze")
+``` 
 
 ## Example output
 When you have an extra dependency
